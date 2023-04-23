@@ -12,9 +12,11 @@
   - [Create a new cheatsheet](#create-a-new-cheatsheet)
   - [Troubleshooting](#troubleshooting)
 
+
+
 ## Installation
 
-To install `cheatsheet`, ensure you have Rust and Cargo installed on your system. Then, follow these steps:
+To install `cheatsheet`, ensure you have [Rust and Cargo installed](https://www.rust-lang.org/tools/install) on your system. Then, follow these steps:
 
 1. Clone the repository:
 

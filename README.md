@@ -35,6 +35,12 @@ cargo install --path .
 cp -r sheets ~/.cheatsheet
 export CHEAT_SHEET_PATH=~/.cheatsheets
 ```
+4. (Optional) Create an alias
+```sh
+echo -e "\nalias cs='cheatsheet'" >> ~/.zshrc
+. ~/.zshrc
+cs --list
+```
 
 ## Usage
 * List all cheat sheets

@@ -32,7 +32,7 @@ cd cheatsheetrs
 ```sh
 cargo build --release
 cargo install --path .
-cp -r sheets ~/.cheatsheet
+cp -r sheets ~/.cheatsheets
 export CHEAT_SHEET_PATH=~/.cheatsheets
 ```
 

@@ -1,0 +1,8 @@
+[38;5;10m[4mFirst Block[0m
+this is text in the first block 
+[48;5;235m[38;5;249mgit code in first block[49m[39m
+[48;5;235m[38;5;249mcd /pub/blah whocha cha[49m[39m
+  1. one
+  2. two
+  x. three
+   . four

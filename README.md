@@ -19,12 +19,12 @@ To install `cheatsheet`, ensure you have Rust and Cargo installed on your system
 1. Clone the repository:
 
 ```sh
-git clone https://github.com/yourusername/cheatsheet.git
+git clone git@github.com:jheryer/cheatsheetrs.git
 ```
 
 2. Change to the cheatsheet directory:
 ```sh
-cd cheatsheet
+cd cheatsheetrs
 ```
 3. Build and Install
 ```sh

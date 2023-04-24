@@ -1,6 +1,6 @@
 # Cheatsheet CLI
 
-`cheatsheet` is a command-line tool written in Rust that enables users to quickly view cheat sheets.  Use the `--list` command to view all available cheat sheets.
+`cheatsheet` is a command-line tool written in Rust that lets users quickly view cheat sheets on the command line. Use markdown to create and modify the default or create new cheat sheets. 
 
 ## Table of Contents
 

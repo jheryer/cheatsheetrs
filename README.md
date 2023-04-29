@@ -35,7 +35,11 @@ cargo install --path .
 cp -r sheets ~/.cheatsheets
 export CHEAT_SHEET_PATH=~/.cheatsheets
 ```
-4. (Optional) Create an alias
+4. (Optional) Configure CLI to permanently set environment variable for cheatsheet
+```sh
+echo -e "\nexport CHEAT_SHEET_PATH=~/.cheatsheets" >> ~/.zshrc
+```
+5. (Optional) Create an alias
 ```sh
 echo -e "\nalias cs='cheatsheet'" >> ~/.zshrc
 . ~/.zshrc

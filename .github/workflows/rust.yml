@@ -16,8 +16,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Rustup
+    - name: Rustup x86_64-unknown-linux-gnu-gcc
       run: rustup target add x86_64-unknown-linux-gnu-gcc
+    - name: Rustup i686-unknown-linux-gnu-gcc
       run: rustup target add i686-unknown-linux-gnu-gcc
     - name: Build
       run: cargo build --verbose

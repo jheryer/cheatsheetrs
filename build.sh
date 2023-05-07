@@ -73,8 +73,8 @@ cat <<EOT >> "${project_name}_footer.rb"
 
     private def create_wrapper
       wrapper = "#!/usr/bin/env bash
-      export CHEAT_SHEET_PATH=\"${CHEAT_SHEET_PATH:-/opt/homebrew/Cellar/cheatsheetrs/0.1.0/sheets}\"
-      #{HOMEBREW_PREFIX}/Cellar/#{name}/#{version}/libexec/cheatsheet \"$@\""
+      export CHEAT_SHEET_PATH=\\"$\{CHEAT_SHEET_PATH:-#{prefix}/sheets\}\\"
+      #{HOMEBREW_PREFIX}/Cellar/#{name}/#{version}/libexec/cheatsheet \"\$@\""
       File.write('cheatsheet_wrapper',wrapper)
     end
 
@@ -88,4 +88,4 @@ cat "${project_name}_header.rb" >> "${project_name}_tmp.rb"
 cat "${project_name}_arch.rb" >> "${project_name}_tmp.rb"
 cat "${project_name}_footer.rb" >> "${project_name}_tmp.rb"
 mv "${project_name}_tmp.rb" "${project_name}.rb"
-rm "${project_name}_header.rb" "${project_name}_arch.rb" "${project_name}_footer.rb" 
+#rm "${project_name}_header.rb" "${project_name}_arch.rb" "${project_name}_footer.rb" 

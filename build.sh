@@ -24,11 +24,20 @@ for arch in "${architectures[@]}"; do
     cp -r sheets $arch/
     echo "Creating tarball $tarball_name $target_path"
     tar czf "$tarball_name" "$arch"
-    shasum -a 256 $tarball_name
     rm $arch/sheets/* 
     rmdir $arch/sheets 
     rm $arch/* 
     rmdir $arch
+
+    sha256=$(shasum -a 256 "$tarball_name" | cut -d' ' -f1)
+    echo "$arch sha256: $sha256"
+
+    cat <<EOT >> "${project_name}_arch.rb"
+   if Hardware::CPU.arch == :${arch%%-*}
+     url "https://github.com/jheryer/cheatsheetrs/releases/download/$version/$tarball_name"
+     sha256 "$sha256"
+   end
+EOT
   else
     echo "Error: Binary not found at $target_path"
   fi
@@ -36,3 +45,47 @@ for arch in "${architectures[@]}"; do
   echo "Done with $arch"
   echo ""
 done
+
+first_letter="$(echo "${project_name:0:1}" | tr '[:lower:]' '[:upper:]')"
+rest_of_string="${project_name:1}"
+class_name="${first_letter}${rest_of_string}rs"
+
+cat <<EOT > "${project_name}_header.rb"
+class ${class_name} < Formula
+  desc "cheatsheet is a command-line tool written in Rust that lets users quickly view cheat sheets on the command line."
+  homepage "https://github.com/jheryer/cheatsheetrs"
+  version "$version"
+
+EOT
+
+# Append the formula footer
+cat <<EOT >> "${project_name}_footer.rb"
+  def install
+      create_wrapper
+      prefix.install "sheets"
+      libexec.install "cheatsheet"
+      bin.install "cheatsheet_wrapper" => "cheatsheet"
+    end
+  
+    def post_install
+      ohai "Sheets location: CHEAT_SHEET_PATH=#{prefix}/sheets"
+    end
+
+    private def create_wrapper
+      wrapper = "#!/usr/bin/env bash
+      export CHEAT_SHEET_PATH=\\"$\{CHEAT_SHEET_PATH:-#{prefix}/sheets\}\\"
+      #{prefix}/libexec/cheatsheet \"\$@\""
+      File.write('cheatsheet_wrapper',wrapper)
+    end
+
+  test do
+    system "#{bin}/$project_name", "--version"
+  end
+end
+EOT
+
+cat "${project_name}_header.rb" >> "${project_name}_tmp.rb"
+cat "${project_name}_arch.rb" >> "${project_name}_tmp.rb"
+cat "${project_name}_footer.rb" >> "${project_name}_tmp.rb"
+mv "${project_name}_tmp.rb" "${project_name}.rb"
+rm "${project_name}_header.rb" "${project_name}_arch.rb" "${project_name}_footer.rb" 

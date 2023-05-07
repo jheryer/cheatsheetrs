@@ -63,6 +63,11 @@ fn test_sheet_list() -> TestResult {
 }
 
 #[test]
+fn test_sheet_path() -> TestResult {
+    run(&["-p"], "tests/expected/list-path.txt")
+}
+
+#[test]
 fn test_basic_sheet_list_anchors() -> TestResult {
     run(&["basic", "-l"], "tests/expected/list-basic-anchors.txt")
 }

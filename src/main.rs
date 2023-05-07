@@ -7,6 +7,9 @@ pub struct Args {
     /// List available sheets or sections
     #[arg(short, long, default_value_t = false)]
     list: bool,
+    /// View the sheet directory
+    #[arg(short, long, default_value_t = false)]
+    path: bool,
 }
 
 fn main() {
@@ -16,9 +19,8 @@ fn main() {
     if option_sheet_path.is_ok() {
         sheet_path = option_sheet_path.unwrap().to_owned();
     } else {
-        sheet_path = String::from("~/.cheatsheets");
+        sheet_path = String::from("sheets");
     }
-
     let args = Args::parse();
 
     if args.sheets.len() == 0 && args.list == true {
@@ -26,6 +28,9 @@ fn main() {
             eprintln!("{}", e);
             std::process::exit(1);
         }
+    } else if args.sheets.len() == 0 && args.path == true {
+        println!("Sheet location: {}", sheet_path);
+        println!("export CHEAT_SHEET_PATH=... to manage your own library");
     } else {
         if let Err(e) = cheatsheet::run(args.sheets, args.list, sheet_path.as_str()) {
             eprintln!("{}", e);

@@ -7,6 +7,8 @@
 - [Cheatsheet CLI](#cheatsheet-cli)
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
+    - [Homebrew (MacOS)](#homebrew-macos)
+    - [Cargo](#cargo)
   - [Usage](#usage)
   - [Available Cheatsheets](#available-cheatsheets)
   - [Create a new cheatsheet](#create-a-new-cheatsheet)
@@ -15,6 +17,14 @@
 
 
 ## Installation
+
+### Homebrew (MacOS)
+```sh
+  brew tap jheryer/tap
+  brew install cheatsheetrs 
+```
+
+### Cargo
 
 To install `cheatsheet`, ensure you have [Rust and Cargo installed](https://www.rust-lang.org/tools/install) on your system. Then, follow these steps:
 

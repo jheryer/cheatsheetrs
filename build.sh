@@ -68,13 +68,13 @@ cat <<EOT >> "${project_name}_footer.rb"
     end
   
     def post_install
-      ohai "Sheets location: CHEAT_SHEET_PATH=#{HOMEBREW_PREFIX}/Cellar/#{name}/#{version}/sheets"
+      ohai "Sheets location: CHEAT_SHEET_PATH=#{prefix}/sheets"
     end
 
     private def create_wrapper
       wrapper = "#!/usr/bin/env bash
       export CHEAT_SHEET_PATH=\\"$\{CHEAT_SHEET_PATH:-#{prefix}/sheets\}\\"
-      #{HOMEBREW_PREFIX}/Cellar/#{name}/#{version}/libexec/cheatsheet \"\$@\""
+      #{prefix}/libexec/cheatsheet \"\$@\""
       File.write('cheatsheet_wrapper',wrapper)
     end
 

@@ -58,7 +58,6 @@ class ${class_name} < Formula
 
 EOT
 
-
 # Append the formula footer
 cat <<EOT >> "${project_name}_footer.rb"
   def install

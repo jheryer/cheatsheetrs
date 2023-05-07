@@ -1,0 +1,2 @@
+Sheet location: ./tests/inputs
+export CHEAT_SHEET_PATH=... to manage your own library

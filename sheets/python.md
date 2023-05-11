@@ -56,7 +56,7 @@ Source: https://www.pythoncheatsheet.org/
 | Code with a comment | `a = 1  # initialization` |
 | Function docstring| Begin and end with `"""` or `'''` lines |
 |
-## Print() Function
+## Print Function
 |
 | Code | Output |
 | --- | --- |
@@ -78,7 +78,7 @@ The keyword sep specify how to separate the objects, if there is more than one.
 | --- | --- |
 | `print('cats', 'dogs', 'mice', sep=',')` | 'cats,dogs,mice' |
 |
-## Input() Function
+## Input Function
 This function takes the input from the user and converts it into a string.
 |
 |Code | Output |
@@ -86,7 +86,7 @@ This function takes the input from the user and converts it into a string.
 | `my_name = input()` | |
 | `print('Hi, {}'.format(my_name))` | 'Hi, Martha' |
 |
-## Len() Function
+## Len Function
 Evaluates to the integer value of the number of characters in a string, list, dictionary, etc.
 |
 | Code | Output |

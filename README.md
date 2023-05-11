@@ -80,6 +80,8 @@ cs --list
 
 
 ## Available Cheatsheets
+* python
+* swift
 * markdown
 * vim
 * gsutil

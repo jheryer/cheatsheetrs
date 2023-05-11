@@ -176,4 +176,3 @@ These functions allow you to change the type of variable. For example, you can t
 | `zip()` | Iterate over several iterables in parallel. |
 | `import()` | This function is invoked by the import statement. |
 |
-

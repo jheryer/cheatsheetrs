@@ -56,41 +56,46 @@ Source: https://www.pythoncheatsheet.org/
 | Code with a comment | `a = 1  # initialization` |
 | Function docstring| Begin and end with `"""` or `'''` lines |
 |
-## Print
+## Print() Function
 |
 | Code | Output |
 | --- | --- |
 | `print('Hello world!')` | 'Hello world!' |
 | `a = 1, print('Hello world!', a)` | 'Hello world! 1' |
 |
-## The end keyword
+## End Keyword
 The keyword argument 'end' can be used to avoid the newline after the output, or end the output with a different string.
+|
 |Code | Output |
 | --- | --- |
 |`phrase = ['printed', 'with', 'a', 'dash', 'in', 'between']` |  |
 |`for word in phrase: print(word, end='-')` | 'printed-with-a-dash-in-between-' |
 |
-## The sep keyword
+## Sep Keyword
 The keyword sep specify how to separate the objects, if there is more than one.
+|
 | Code | Output |
 | --- | --- |
 | `print('cats', 'dogs', 'mice', sep=',')` | 'cats,dogs,mice' |
 |
-## The input() Function
+## Input() Function
 This function takes the input from the user and converts it into a string.
+|
 |Code | Output |
 | --- | --- |
 | `my_name = input()` | |
 | `print('Hi, {}'.format(my_name))` | 'Hi, Martha' |
 |
-## The len() Function
+## Len() Function
 Evaluates to the integer value of the number of characters in a string, list, dictionary, etc.
+|
 | Code | Output |
 | --- | --- |
 | `len('hello')` | '5' |
 |
-## The str(), int(), and float() Functions
+## String, Integer, and Float Functions
 These functions allow you to change the type of variable. For example, you can transform from an 'integer' or 'float' to a 'string'. Or, from a string to an integer or float
+|
 | Code | Output |
 | --- | --- |
 | `str(29)` | '29' |
@@ -103,7 +108,7 @@ These functions allow you to change the type of variable. For example, you can t
 | Function | Description |
 | --- | --- |
 | `abs()` | Return the absolute value of a number. |
-| `aiter()` | Return an asynchronous iterator for an asynchronous |iterable. |
+| `aiter()` | Return an asynchronous iterator for an asynchronous iterable. |
 | `all()` | Return True if all elements of the iterable are true. |
 | `any()` | Return True if any element of the iterable is true. |
 | `ascii()` | Return a string with a printable representation of an object. |
